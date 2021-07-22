@@ -1,0 +1,71 @@
+ALGORITHM algorithmOneSolutionOne
+VAR
+     tab : ARRAY_OF INTEGER[]; 
+     tab1 : ARRAY_OF INTEGER[]; 
+        verif : BOOLEAN;
+     i,j,sum : INTEGER=0; 
+BEGIN
+
+
+
+
+
+
+    dist := 0;
+    Read(tab[0]);
+  FOR i FROM 1 TO tab.length DO
+     WHILE (dist = 1) DO
+        Write("write the Elements of  First Table : ");
+        Read(tab[i])
+           dist := 0
+        FOR j FROM 0 TO i   DO
+          IF (tab[i]=tab[j]) THEN
+            dist := 1;
+          END_IF
+        END_FOR
+      END_WHILE
+   END_FOR
+
+
+
+
+
+
+
+    dist := 0;
+    Read(tab1[0]);
+  FOR i FROM 1 TO tab1.length DO
+     WHILE (dist = 1) DO
+        Write("write the Elements of  First Table : ");
+        Read(tab1[i])
+           dist := 0
+        FOR j FROM 0 TO i   DO
+          IF (tab1[i]=tab1[j]) THEN
+            dist := 1;
+          END_IF
+        END_FOR
+      END_WHILE
+   END_FOR
+
+
+
+
+   FOR i FROM 0 TO tab.length DO
+        
+        FOR j FROM 0 TO tab1.length  DO
+          IF (tab[i] = tab1[j]) THEN
+              sum := sum + tab[i] * 2;
+          END_IF
+        END_FOR
+            END_IF
+    END_FOR
+
+
+
+   
+
+
+
+write ("Sum of Common ELEMENT is : ", sum)
+
+END

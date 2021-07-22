@@ -1,0 +1,78 @@
+ALGORITHM algorithm12
+VAR
+     htab : HASH_TABLE<INTEGER,INTEGER>;
+     distinct_table : ARRAY_OF INTEGER[];
+      tab : ARRAY_OF INTEGER[]; 
+     tab2 : ARRAY_OF INTEGER[]; 
+     count : INTEGER = 1;
+     sum   : INTEGER;
+BEGIN
+
+    dist := 0;
+    Read(tab[0]);
+  FOR i FROM 1 TO tab.length DO
+     WHILE (dist = 1) DO
+        Write("write the Elements of  First Table : ");
+        Read(tab[i])
+           dist := 0
+        FOR j FROM 0 TO i   DO
+          IF (tab[i]=tab[j]) THEN
+            dist := 1;
+          END_IF
+        END_FOR
+      END_WHILE
+   END_FOR
+
+
+    dist := 0;
+    Read(tab1[0]);
+  FOR i FROM 1 TO tab1.length DO
+     WHILE (dist = 1) DO
+        Write("write the Elements of  First Table : ");
+        Read(tab1[i])
+           dist := 0
+        FOR j FROM 0 TO i   DO
+          IF (tab1[i]=tab1[j]) THEN
+            dist := 1;
+          END_IF
+        END_FOR
+      END_WHILE
+   END_FOR
+
+
+   FOR i FROM 0 TO tab.length-1 STEP 1  DO
+       IF (htab.lookup(tab[i]) = TRUE) THEN  
+        count := count + 1
+           htab.insert(tab[i],count);
+          
+       ELSE
+                distinct_table.push(tab[i]) 
+           htab.insert(tab[i],count);
+       END_IF
+   END_FOR
+count := 1;
+
+  FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+       IF (htab.lookup(tab2[i]) = TRUE) THEN
+            count := count + 1
+           htab.insert(tab2[i],count);
+       ELSE
+                distinct_table.push(tab1[i]) 
+           htab.insert(tab2[i],count);
+       END_IF
+   END_FOR
+
+
+
+sum := 0;
+FOR i FROM 0 TO distinct_table.length - 1 STEP 1  DO
+
+    IF (htb.get(distinct_table[i]) <> 1) THEN
+        sum_com := distinct_table[i]*htab.get(distinct_table[i]);    
+
+    END_IF
+   
+END_FOR
+write (" The result is : ",sum);
+
+END
